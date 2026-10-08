@@ -1,0 +1,21 @@
+# Virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Scheduler logs (run_daily.py)
+logs/
+
+# Downloaded videos (record_video.py) - too large for git
+saved_matches/
+
+# Editors / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

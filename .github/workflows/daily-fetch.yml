@@ -1,0 +1,64 @@
+# Runs fetch_streamed.py and create_embedurl.py every day at 12:00 AM Pacific
+# and commits the updated data/ files back to the repo.
+name: Daily fetch
+
+on:
+  schedule:
+    # GitHub cron is UTC. Midnight Pacific is 07:00 UTC in summer (PDT) and
+    # 08:00 UTC in winter (PST), so both are scheduled and the gate job skips
+    # whichever one isn't midnight today.
+    - cron: "0 7 * * *"
+    - cron: "0 8 * * *"
+  workflow_dispatch: # "Run workflow" button in the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-fetch
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.check.outputs.run }}
+    steps:
+      - id: check
+        run: |
+          if [ "$(TZ=America/Los_Angeles date +%Z)" = "PDT" ]; then want="0 7 * * *"; else want="0 8 * * *"; fi
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "${{ github.event.schedule }}" != "$want" ]; then
+            echo "Not midnight Pacific, skipping."
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  fetch:
+    needs: gate
+    if: needs.gate.outputs.run == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.14"
+
+      - run: pip install requests pandas
+
+      - run: python fetch_streamed.py
+
+      # Still run (and save) the other script if one of them fails.
+      - if: ${{ !cancelled() }}
+        run: python create_embedurl.py
+
+      - name: Commit updated data
+        if: ${{ !cancelled() }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898313+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then echo "No changes."; exit 0; fi
+          git commit -m "Daily data fetch $(TZ=America/Los_Angeles date +%F)"
+          git pull --rebase
+          git push

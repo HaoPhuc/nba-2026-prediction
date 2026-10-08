@@ -1,0 +1,5 @@
+requests
+pandas
+yt-dlp
+imageio-ffmpeg
+ipykernel
