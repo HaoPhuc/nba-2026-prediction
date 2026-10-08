@@ -1,7 +1,10 @@
-import requests
 import json
+from pathlib import Path
+
+import requests
 
 H = {"User-Agent": "Mozilla/5.0"}
+OUT_PATH = Path(__file__).parent / "data" / "nba_streams.json"
 
 NBA_TEAMS = {
     "atlanta hawks", "boston celtics", "brooklyn nets",
@@ -50,7 +53,8 @@ for game in matches:
 
     output.append(game_output)
 
-with open("nba_streams.json", "w", encoding="utf-8") as f:
+OUT_PATH.parent.mkdir(exist_ok=True)
+with open(OUT_PATH, "w", encoding="utf-8") as f:
     json.dump(output, f, indent=2, ensure_ascii=False)
 
-print(f"Saved {len(output)} matches to nba_streams.json")
+print(f"Saved {len(output)} matches to {OUT_PATH}")
