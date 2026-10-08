@@ -247,6 +247,12 @@
         "language": "English",
         "quality": "SD",
         "embedUrl": "https://embed.st/embed/golf/2120/2"
+      },
+      {
+        "source": "hotel",
+        "language": "Main",
+        "quality": "HD",
+        "embedUrl": "https://embed.st/embed/hotel/houston-rockets-vs-dallas-mavericks-nba-1791547200/1"
       }
     ]
   },
@@ -264,6 +270,18 @@
         "language": "English - NBA TV",
         "quality": "SD",
         "embedUrl": "https://embed.st/embed/admin/ppv-memphis-grizzlies-vs-chicago-bulls/2"
+      },
+      {
+        "source": "golf",
+        "language": "English",
+        "quality": "HD",
+        "embedUrl": "https://embed.st/embed/golf/2140/1"
+      },
+      {
+        "source": "golf",
+        "language": "English",
+        "quality": "SD",
+        "embedUrl": "https://embed.st/embed/golf/2140/2"
       }
     ]
   }
