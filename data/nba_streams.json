@@ -1,18 +1,18 @@
 [
   {
-    "title": "Los Angeles Lakers vs Denver Nuggets",
+    "title": "Boston Celtics - Detroit Pistons",
     "streams": [
       {
         "source": "golf",
         "language": "English",
         "quality": "HD",
-        "embedUrl": "https://embed.st/embed/golf/2328/1"
+        "embedUrl": "https://embed.st/embed/golf/2386/1"
       },
       {
         "source": "golf",
         "language": "English",
         "quality": "SD",
-        "embedUrl": "https://embed.st/embed/golf/2328/2"
+        "embedUrl": "https://embed.st/embed/golf/2386/2"
       }
     ]
   }
