@@ -1,7 +1,19 @@
 [
   {
-    "title": "Boston Celtics - Detroit Pistons",
+    "title": "Detroit Pistons vs Boston Celtics",
     "streams": [
+      {
+        "source": "admin",
+        "language": "English - NBC",
+        "quality": "HD",
+        "embedUrl": "https://embed.st/embed/admin/ppv-boston-celtics-vs-detroit-pistons/1"
+      },
+      {
+        "source": "admin",
+        "language": "English - NBC",
+        "quality": "SD",
+        "embedUrl": "https://embed.st/embed/admin/ppv-boston-celtics-vs-detroit-pistons/2"
+      },
       {
         "source": "golf",
         "language": "English",
@@ -13,6 +25,64 @@
         "language": "English",
         "quality": "SD",
         "embedUrl": "https://embed.st/embed/golf/2386/2"
+      }
+    ]
+  },
+  {
+    "title": "New York Knicks vs Philadelphia 76ers",
+    "streams": [
+      {
+        "source": "admin",
+        "language": "English - NBC",
+        "quality": "HD",
+        "embedUrl": "https://embed.st/embed/admin/ppv-philadelphia-76-ers-vs-new-york-knicks/1"
+      },
+      {
+        "source": "admin",
+        "language": "English - NBC",
+        "quality": "SD",
+        "embedUrl": "https://embed.st/embed/admin/ppv-philadelphia-76-ers-vs-new-york-knicks/2"
+      },
+      {
+        "source": "golf",
+        "language": "English",
+        "quality": "HD",
+        "embedUrl": "https://embed.st/embed/golf/2410/1"
+      },
+      {
+        "source": "golf",
+        "language": "English",
+        "quality": "SD",
+        "embedUrl": "https://embed.st/embed/golf/2410/2"
+      }
+    ]
+  },
+  {
+    "title": "Oklahoma City Thunder vs. San Antonio Spurs",
+    "streams": [
+      {
+        "source": "admin",
+        "language": "English - NBC",
+        "quality": "HD",
+        "embedUrl": "https://embed.st/embed/admin/ppv-oklahoma-city-thunder-vs-san-antonio-spurs/1"
+      },
+      {
+        "source": "admin",
+        "language": "English - NBC",
+        "quality": "SD",
+        "embedUrl": "https://embed.st/embed/admin/ppv-oklahoma-city-thunder-vs-san-antonio-spurs/2"
+      },
+      {
+        "source": "golf",
+        "language": "English",
+        "quality": "HD",
+        "embedUrl": "https://embed.st/embed/golf/2411/1"
+      },
+      {
+        "source": "golf",
+        "language": "English",
+        "quality": "SD",
+        "embedUrl": "https://embed.st/embed/golf/2411/2"
       }
     ]
   }
